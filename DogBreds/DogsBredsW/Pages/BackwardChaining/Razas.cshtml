@@ -1,0 +1,44 @@
+﻿@page
+@model DogsBredsW.Pages.BackwardChaining.RazasModel
+@{
+    ViewData["Title"] = "Razas";
+}
+    <h1>Razas</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Raza
+                </th>
+                <th>
+                    Altura (cm)
+                </th>
+                <th>
+                    Esperanza de vida (años)
+                </th>
+                <th>
+                    Actividad fisica recomendada
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Razas)
+            {
+            <tr>
+                <td>
+                    <a asp-page="./RazaInfo" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Altura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EsperanzaDeVida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actividad)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+

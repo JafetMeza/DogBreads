@@ -1,0 +1,25 @@
+﻿@page "{id}"
+@model DogsBredsW.Pages.ForwardChaining.HairTypeModel
+@{
+    ViewData["Title"] = "Tipo de pelo";
+}
+<h3>Seleccione una caracteristica del pelo del perro. </h3>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="card col-4">
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label>Caracteristica de pelo</label>
+            </div>
+            <div class="form-group">
+                <select asp-for="Carac" asp-items="Model.Caracteristics">
+                    <option value="0">Seleccione una opción...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>

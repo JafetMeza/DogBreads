@@ -4,93 +4,101 @@
     ViewData["Title"] = "RazaInfo";
 }
 
-<h1>@Html.DisplayFor(model => model.Raza.Nombre)</h1>
 
-        <h3>Caracteristicas generales</h3>
-        <strong>Altura (cm)</strong>
-        <p>@Html.DisplayFor(model => model.Raza.Altura)</p>
-        <strong>Esperanza de vida</strong>
-        <p>@Html.DisplayFor(model => model.Raza.EsperanzaDeVida)</p>
-        <strong>Actividad fisica recomendada</strong>
-        <p>@Html.DisplayFor(model => model.Raza.Actividad)</p>
-        <div class="row" style="display:flex">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3>Paises de origen</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Nombre
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Raza.Origenes)
-                                {
-                                    <tr>
-                                        <td>
-                                            <a asp-page="./OriginInfo" asp-route-id="@item.OriginId">@Html.DisplayFor(modelItem => item.Origin.Nombre)</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+<div class="row" style="margin: 5px 2px 20px 2px;">
+    <div class="card col-12 border-left-primary shadow">
+        <div class="card-body">
+            <h1 class="text-gray-900">@Html.DisplayFor(model => model.Raza.Nombre)</h1>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3>Caracteristicas fisicas</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Nombre
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Raza.CaracFisics)
-                                {
-                                    <tr>
-                                        <td>
-                                            <a asp-page="./CaracteristicInfo" asp-route-id="@item.CaracFisicId">@Html.DisplayFor(modelItem => item.CaracFisic.Nombre)</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3>Tipo de pelo</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Nombre
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Raza.TiposDePelo)
-                                {
-                                    <tr>
-                                        <td>
-                                            <a asp-page="./HairTypeInfo" asp-route-id="@item.HairTypeId">@Html.DisplayFor(modelItem => item.HairType.Nombre)</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <h3 class="text-gray-900">Caracteristicas generales</h3>
+            <strong class="text-gray-900">Altura (cm)</strong>
+            <p class="text-gray-900">@Html.DisplayFor(model => model.Raza.Altura)</p>
+            <strong class="text-gray-900">Esperanza de vida</strong>
+            <p class="text-gray-900">@Html.DisplayFor(model => model.Raza.EsperanzaDeVida)</p>
+            <strong class="text-gray-900">Actividad fisica recomendada</strong>
+            <p class="text-gray-900">@Html.DisplayFor(model => model.Raza.Actividad)</p>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="display:flex">
+    <div class="col-4">
+        <div class="card border-left-warning shadow">
+            <div class="card-body">
+                <h3 class="text-gray-900">Paises de origen</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Raza.Origenes)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-page="./OriginInfo" asp-route-id="@item.OriginId">@Html.DisplayFor(modelItem => item.Origin.Nombre)</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
             </div>
         </div>
+    </div>
+    <div class="col-4">
+        <div class="card border-left-warning shadow">
+            <div class="card-body">
+                <h3 class="text-gray-900">Caracteristicas fisicas</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Raza.CaracFisics)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-page="./CaracteristicInfo" asp-route-id="@item.CaracFisicId">@Html.DisplayFor(modelItem => item.CaracFisic.Nombre)</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card border-left-warning shadow">
+            <div class="card-body">
+                <h3 class="text-gray-900">Tipo de pelo</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Raza.TiposDePelo)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-page="./HairTypeInfo" asp-route-id="@item.HairTypeId">@Html.DisplayFor(modelItem => item.HairType.Nombre)</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

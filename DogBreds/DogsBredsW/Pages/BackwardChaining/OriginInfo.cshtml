@@ -4,44 +4,46 @@
     ViewData["Title"] = "OriginInfo";
 }
 
-<h1>@Html.DisplayFor(model => model.Origin.Nombre)</h1>
+    <div class="card border-left-danger shadow">
+        <h1 class="text-gray-900">@Html.DisplayFor(model => model.Origin.Nombre)</h1>
 
-<h3>Razas originarias del lugar</h3>
+        <h3 class="text-gray-900">Razas originarias del lugar</h3>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                Raza
-            </th>
-            <th>
-                Altura (cm)
-            </th>
-            <th>
-                Esperanza de vida (años)
-            </th>
-            <th>
-                Actividad fisica recomendada
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Origin.RazaOrigenes)
-        {
-            <tr>
-                <td>
-                    <a asp-page="./RazaInfo" asp-route-id="@item.RazaId">@Html.DisplayFor(modelItem => item.Raza.Nombre)</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Raza.Altura)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Raza.EsperanzaDeVida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Raza.Actividad)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Raza
+                    </th>
+                    <th>
+                        Altura (cm)
+                    </th>
+                    <th>
+                        Esperanza de vida (años)
+                    </th>
+                    <th>
+                        Actividad fisica recomendada
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Origin.RazaOrigenes)
+                {
+                    <tr>
+                        <td>
+                            <a asp-page="./RazaInfo" asp-route-id="@item.RazaId">@Html.DisplayFor(modelItem => item.Raza.Nombre)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Raza.Altura)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Raza.EsperanzaDeVida)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Raza.Actividad)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

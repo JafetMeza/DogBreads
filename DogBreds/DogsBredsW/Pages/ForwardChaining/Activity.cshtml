@@ -3,14 +3,14 @@
 @{
     ViewData["Title"] = "Activity";
 }
-<h3>Seleccione la cantidad de actividad recomendada.</h3>
+<h3 class="text-gray-900">Seleccione la cantidad de actividad recomendada.</h3>
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div class="card col-4">
+<div class="card col-6 border-left-success shadow">
+    <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-secondary">Actividad recomendada</h6>
+    </div>
     <div class="card-body">
         <form method="post">
-            <div class="form-group">
-                <label>Actividad recomendada</label>
-            </div>
             <div class="form-group">
                 <select asp-for="Carac" asp-items="Model.Caracteristics">
                     <option value="0">Seleccione una opción...</option>

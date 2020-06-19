@@ -3,14 +3,15 @@
 @{
     ViewData["Title"] = "Home";
 }
-<h3>Seleccione una caracteristica fisica del perro.</h3>
+<h3 class="text-gray-900">Seleccione una caracteristica fisica del perro.</h3>
+
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div class="card col-4">
+<div class="card col-6 border-left-success shadow">
+    <div class="card-header">
+        <h6 class="m-0 font-weight-bold text-secondary">Caracteristica fisica</h6>
+    </div>
     <div class="card-body">
         <form method="post">
-            <div class="form-group">
-                <label>Caracteristica fisica</label>
-            </div>
             <div class="form-group">
                 <select asp-for="Carac" asp-items="Model.Caracteristics">
                     <option value="0">Seleccione una opción...</option>
